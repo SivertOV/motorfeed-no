@@ -1,8 +1,27 @@
 # MotorFeed.no
 
-Premium norsk motorportal med mørkt design, logo, RSS-feed, MC-feed, sponsorflater og Netlify Forms.
+Premium norsk motorportal med automatisk innholdsmotor.
+
+## Dette er nytt i denne versjonen
+
+- Flere RSS-kilder
+- MC-feed via RideApart
+- Norsk bilfeed via E24 Bil
+- Elbil-feeds via InsideEVs og Green Car Reports
+- Automatisk kategorisering: Bil, Elbil, MC og Teknologi
+- Bedre fallback-bilder
+- Nyhetskort fylles automatisk på forsiden
+- Netlify Function: `netlify/functions/fetch-news.js`
 
 ## Publisering
-1. Last opp alle filene til GitHub.
-2. Koble repoet til Netlify.
-3. Netlify leser `netlify.toml` automatisk.
+
+Last opp disse filene til GitHub-repoet ditt og commit:
+
+```text
+index.html
+netlify.toml
+README.md
+netlify/functions/fetch-news.js
+```
+
+Netlify publiserer automatisk etter commit.
