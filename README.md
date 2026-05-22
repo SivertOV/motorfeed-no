@@ -1,27 +1,12 @@
 # MotorFeed.no
 
-Premium norsk motorportal med automatisk innholdsmotor.
+Premium MotorFeed-design med live RSS-feed koblet direkte inn i forsiden.
 
-## Dette er nytt i denne versjonen
-
-- Flere RSS-kilder
-- MC-feed via RideApart
-- Norsk bilfeed via E24 Bil
-- Elbil-feeds via InsideEVs og Green Car Reports
-- Automatisk kategorisering: Bil, Elbil, MC og Teknologi
-- Bedre fallback-bilder
-- Nyhetskort fylles automatisk på forsiden
-- Netlify Function: `netlify/functions/fetch-news.js`
-
-## Publisering
-
-Last opp disse filene til GitHub-repoet ditt og commit:
-
-```text
-index.html
-netlify.toml
-README.md
-netlify/functions/fetch-news.js
-```
-
-Netlify publiserer automatisk etter commit.
+## V3
+- Premium design beholdt
+- Hovedsak fylles automatisk
+- Sidekort fylles automatisk
+- Siste nytt fylles automatisk
+- Mest populært bruker feed-data
+- MC-kort bruker MC-feed når tilgjengelig
+- Netlify Function henter RSS
