@@ -1,28 +1,15 @@
-# MotorFeed.no — V5 Refined
+# MotorFeed V5.1 Premium Corrected
 
-## V5 Premium Retning
+Korrigert V5-pakke.
 
-Denne versjonen fokuserer på:
-- mindre RSS-følelse
-- mer premium motorportal
-- AI-kuratert opplevelse
-- renere UX
-- smartere layout
-- sterkere MotorFeed-branding
+## Endret
+- AI-status fjernet fra offentlig forside
+- Raske lenker fjernet
+- Solide kilder fjernet
+- Lagt til Populært nå
+- Lagt til MotorFeed Pulse
+- Lagt til Dagens motorvideo
+- Beholder streng V5 feedmotor og bedre elbil/MC-kategorisering
 
-## Endringer
-
-- Fjernet "Raske lenker"
-- Fjernet "Solide kilder"
-- Fjernet AI-status fra forsiden
-- Lagt grunnlag for MotorFeed Pulse
-- Forberedt for ekte data fra Analytics/Search Console
-
-## Neste steg
-
-Når mer trafikkdata er tilgjengelig:
-- ekte Trending Now
-- smartere AI-prioritering
-- live pulse
-- bedre EV/MC-relevans
-- optimalisert forside
+## Viktig
+Dette er versjonen som bør brukes som V5-preview/test før den eventuelt erstatter live V4.

@@ -284,6 +284,15 @@
     .identity-strip strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
     @media(max-width:780px){.pulse-grid,.identity-strip{grid-template-columns:1fr}}
 
+
+/* V5.1 cleanup: remove developer/RSS-source panels from public UI */
+#aiStatus, .ai-status, .status-panel, .quick-links, .sources-panel, #kilder, #sources { display:none !important; }
+
+
+@media(max-width:780px){
+  .v5-pulse-grid{grid-template-columns:1fr !important;}
+}
+
 </style>
 
   <script type="application/ld+json">
@@ -345,144 +354,7 @@
   </nav>
 
   <main id="top">
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="breaking">↯ LIVE MOTORPORTAL</div>
-          <h1>MotorFeed Pulse. Bil og MC – smartere.</h1>
-          <p>AI-kuraterte motornyheter, Populært nå, videoer, MC-sesong, elbil, vær og norske forhold – samlet på ett sted.</p>
-          <div class="hero-actions"><a class="btn btn-red" href="#nyheter">Se siste nyheter →</a><a class="btn btn-dark" href="#brief">Dagens MotorBrief 🧠</a></div>
-        </div>
-
-        <aside>
-          <div class="newsletter-card">
-            <h2>Hold deg oppdatert!</h2>
-            <p>Få de viktigste nyhetene rett i innboksen.</p>
-            <form name="nyhetsbrev" method="POST" data-netlify="true"><input type="hidden" name="form-name" value="nyhetsbrev"/><input type="email" name="email" placeholder="Din e-postadresse" required/><button class="btn btn-red" type="submit">Abonner gratis ✈</button></form>
-<p class="newsletter-note">🚀 MotorFeed utvikles kontinuerlig med nye AI-funksjoner, smartere motoroppdateringer og forbedret bil- og MC-innhold.</p>
-
-            <div class="benefits"><span>100% gratis</span><span>Ingen spam</span><span>Avmeld når som helst</span></div>
-          </div>
-
-          <div class="weather-card">
-            <h2>Vær & kjøreforhold</h2><p id="weatherPlace">Henter vær...</p>
-            <div class="weather-main"><div><div class="weather-temp" id="weatherTemp">--°</div><small id="weatherDesc">Oppdaterer</small></div><div class="weather-icon" id="weatherIcon">🌦️</div></div>
-            <div class="road-status" id="roadStatus">Kjøreforhold vurderes...</div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="container"><div class="feature-bar">
-      <div class="feature-item"><div class="feature-icon">↯</div><div><strong>Live feed</strong><small>Automatiske nyheter</small></div></div>
-      <div class="feature-item"><div class="feature-icon">🧠</div><div><strong>MotorBrief</strong><small>Norsk sammendrag</small></div></div>
-      <div class="feature-item"><div class="feature-icon">▶</div><div><strong>YouTube</strong><small>Dagens motorvideo</small></div></div>
-      <div class="feature-item"><div class="feature-icon">🏍</div><div><strong>MC & utstyr</strong><small>Nyheter og kjøpsstoff</small></div></div>
-    </div></div>
-
-    <div id="elbil"></div>
     
-    <div class="container">
-      <div class="identity-strip">
-        <div><strong>70% Bil</strong>Elbil, teknologi, nyheter, tester, premiumbiler og trender.</div>
-        <div><strong>30% MC</strong>MC-sesong, touring, adventure, sikkerhet, utstyr og videoer.</div>
-        <div><strong>AI-kurert</strong>MotorFeed prioriterer relevans, motorfokus og kvalitet fremfor tilfeldig feedstøy.</div>
-      </div>
-    </div>
-
-    <section class="dashboard" id="nyheter">
-      <div class="container dash-grid">
-        <aside class="panel sidebar-left">
-          <div class="panel-head"><span>Kategorier</span></div>
-          <div class="category-list">
-            <a class="category-link active" data-filter="Alle">▣ Alle nyheter</a><a class="category-link" data-filter="Bil">▰ Bil</a><a class="category-link" data-filter="Elbil">⚡ Elbil</a><a class="category-link" data-filter="MC">🏍 MC</a><a class="category-link" data-filter="Teknologi">✺ Teknologi</a><a class="category-link" data-filter="Utstyr">🧰 Bilutstyr</a>
-          </div>
-        </aside>
-
-        <div>
-          <section class="brief" id="brief">
-            <div class="brief-top"><div><small>AI-klargjort daglig oppsummering</small><h2>Dagens MotorBrief</h2></div><a class="btn btn-dark" href="#nyheter">Se kildene</a></div>
-            <ul id="briefList"><li>Henter dagens viktigste saker...</li></ul>
-            <div class="brief-note">MotorBrief bruker korte norske sammendrag fra feed-data. Med OPENAI_API_KEY i Netlify blir sammendragene AI-generert.</div>
-          </section>
-
-
-          <section class="panel popular-now" id="populaert">
-            <div class="panel-head"><span>🔥 Populært nå</span><span class="v5-badge">V5 Pulse</span></div>
-            <div class="popular-list" id="popularNowList">
-              <div class="category-link">Analyserer hva som er mest interessant akkurat nå...</div>
-            </div>
-          </section>
-
-          <section class="panel" id="pulse">
-            <div class="panel-head"><span>⚡ MotorFeed Pulse</span><a class="panel-link" href="#nyheter">Live</a></div>
-            <div class="pulse-grid">
-              <div class="pulse-card">
-                <div class="micro-label">Motorbalanse</div>
-                <h3 id="pulseBalance">70% bil / 30% MC</h3>
-                <div class="pulse-list" id="pulseInsights">
-                  <div>AI vurderer bil-, elbil- og MC-trender...</div>
-                </div>
-              </div>
-              <div class="pulse-card">
-                <div class="micro-label">Sesongmotor</div>
-                <h3 id="seasonTitle">Aktuelt nå</h3>
-                <div class="pulse-list" id="seasonList">
-                  <div>MC-sesong, touring og kjøreforhold vurderes automatisk.</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-
-          <section class="panel">
-            <div class="panel-head"><span>Fremme i nyhetene</span><a class="panel-link" id="showAllTop">Se alle nyheter →</a></div>
-            <div class="main-stories">
-              <a class="lead-card" id="leadCard" href="#" target="_blank" rel="noopener noreferrer">
-                <img id="leadImage" src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a?auto=format&fit=crop&w=1100&q=84" alt="Elbil på vei"/>
-                <div class="image-overlay"><span id="leadTag" class="tag">Trending</span><h2 id="leadTitle">Henter siste motornyheter...</h2><p class="summary" id="leadSummary"></p><div id="leadMeta" class="meta"><span>RSS-feed</span><span>MotorFeed</span></div></div>
-              </a>
-              <div class="side-list" id="trendingStories"></div>
-            </div>
-          </section>
-
-          <section class="panel" style="margin-top:16px"><div class="panel-head"><span>Siste nytt</span><a class="panel-link" id="showMore">Last flere →</a></div><div class="latest-grid" id="newsGrid"></div></section>
-
-          <div class="bottom-grid">
-            <section class="panel" id="utstyr"><div class="panel-head"><span>Bilutstyr & tester</span><a class="panel-link" data-filter-button="Utstyr">Filtrer →</a></div><a class="guide-card" id="gearCard" href="https://www.tek.no/" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=500&q=80" alt="Bilutstyr"><div><h3>Dashcam, dekk, bilpleie og utstyr</h3><p>Samler tester og utstyrsstoff fra sterke kilder.</p></div></a></section>
-            <section class="panel" id="mc"><div class="panel-head"><span>MC & kjøreforhold</span><a class="panel-link" data-filter-button="MC">Filtrer →</a></div><a class="guide-card" id="mcCard" href="https://www.rideapart.com/" target="_blank" rel="noopener noreferrer"><img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=500&q=80" alt="MC"><div><h3>MC-sesongen er i gang</h3><p>Nyheter, touring, utstyr og kjøreforhold.</p></div></a></section>
-          </div>
-
-          <div class="extra-sections">
-            <section class="panel" id="video">
-              <div class="panel-head"><span>Dagens video</span><a class="panel-link" id="openVideoLink" href="https://www.youtube.com/results?search_query=car+review+electric+vehicle" target="_blank" rel="noopener noreferrer">Åpne YouTube →</a></div>
-              <a class="video-card" id="videoCard" href="https://www.youtube.com/results?search_query=car+review+electric+vehicle" target="_blank" rel="noopener noreferrer">
-                <img id="videoThumb" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=900&q=82" alt="Dagens motorvideo">
-                <div class="play">▶</div>
-                <div class="video-body"><span class="tag blue" id="videoChannel">Video</span><h3 id="videoTitle">Utvalgte motorvideoer, tester og lanseringer</h3><p class="summary" id="videoMeta">Henter automatisk fra utvalgte motor-kanaler.</p></div>
-              </a>
-              <iframe id="videoFrame" class="video-frame" allowfullscreen loading="lazy"></iframe>
-            </section>
-
-            <section class="panel">
-              <div class="panel-head"><span>Premium sponsor</span><a class="panel-link" href="mailto:annonser@motorfeed.no">Kontakt →</a></div>
-              <a class="sponsor-banner" href="mailto:annonser@motorfeed.no">
-                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=82" alt="Sponsorbil">
-                <div class="sponsor-content"><span class="tag">Sponsor</span><h3>Annonsere på MotorFeed?</h3><p>Perfekt for dekk, ladeboks, bilpleie, MC-utstyr og verksted.</p><span class="mini-btn">Ta kontakt</span></div>
-              </a>
-            </section>
-          </div>
-        </div>
-
-        <aside class="right-col">
-          <section class="panel"><div class="panel-head"><span>🔥 Mest lest</span></div><div class="popular-list" id="popularList"></div></section>
-          
-          <section class="panel" id="ai-status">
-            <div class="panel-head"><span>🧠 AI-status</span><a class="panel-link" id="refreshAiStatus">Sjekk →</a></div>
-            <div class="category-list" id="aiStatusList">
-              <div class="category-link">Sjekker feed, bilder, video og lenker...</div>
-            </div>
-          </section>
 
           <section class="panel"><div class="panel-head"><span>Kontakt</span></div><div class="category-list"><a class="category-link" href="mailto:kontakt@motorfeed.no">kontakt@motorfeed.no</a><a class="category-link" href="mailto:tips@motorfeed.no">tips@motorfeed.no</a><a class="category-link" href="mailto:annonser@motorfeed.no">annonser@motorfeed.no</a></div></section>
           
@@ -501,6 +373,34 @@
       V5 fokuserer på AI-prioriterte motornyheter, smartere relevansfiltrering,
       mer premium magasin-layout og levende innhold basert på ekte trafikkdata.
     </div>
+  </div>
+</section>
+
+
+<section class="container" id="populaert-na">
+  <div class="panel">
+    <div class="panel-head"><span>🔥 Populært nå</span><a class="panel-link" href="#nyheter">Oppdateres live</a></div>
+    <div id="popularNowList" class="popular-list" style="padding:18px;">
+      <div class="category-link">MotorFeed analyserer hvilke bil- og MC-saker som bør løftes først.</div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="motorfeed-pulse">
+  <div class="panel">
+    <div class="panel-head"><span>⚡ MotorFeed Pulse</span><span class="panel-link">V5</span></div>
+    <div style="padding:22px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;" class="v5-pulse-grid">
+      <div class="category-link"><strong>70% Bil</strong><br>Elbil, nyheter, tester, teknologi og premiumbiler.</div>
+      <div class="category-link"><strong>30% MC</strong><br>MC-sesong, touring, utstyr, sikkerhet og videoer.</div>
+      <div class="category-link"><strong>AI-kurert</strong><br>Strengere relevansfilter og mindre tilfeldig feedstøy.</div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="dagens-video">
+  <div class="panel">
+    <div class="panel-head"><span>🎥 Dagens motorvideo</span><a class="panel-link" href="#video">Se flere</a></div>
+    <div id="v5VideoSpotlight" style="padding:18px;color:#d7dde8;">Video prioriteres etter relevans for bil, elbil og MC.</div>
   </div>
 </section>
 
