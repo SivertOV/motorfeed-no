@@ -1,12 +1,16 @@
-# MotorFeed.no
+# MotorFeed.no — V4 Final Lanseringsklar
 
-Premium MotorFeed-design med live RSS-feed koblet direkte inn i forsiden.
+Inkludert:
+- Premium mørkt MotorFeed-design
+- Klikkbare artikler
+- AI-klargjorte norske sammendrag
+- Smart duplikatfjerning
+- YouTube-seksjon
+- Vær og kjøreforhold
+- AI-status / sidehelse-sjekk
+- kontakt@motorfeed.no integrert
+- robots.txt og sitemap.xml
+- kontakt.html og personvern.html
 
-## V3
-- Premium design beholdt
-- Hovedsak fylles automatisk
-- Sidekort fylles automatisk
-- Siste nytt fylles automatisk
-- Mest populært bruker feed-data
-- MC-kort bruker MC-feed når tilgjengelig
-- Netlify Function henter RSS
+Uten OPENAI_API_KEY bruker siden fallback-sammendrag.
+Med OPENAI_API_KEY i Netlify får du bedre AI-sammendrag.
