@@ -1,15 +1,16 @@
-# MotorFeed V5.1 Premium Corrected
+# MotorFeed.no — V4 Final Lanseringsklar
 
-Korrigert V5-pakke.
+Inkludert:
+- Premium mørkt MotorFeed-design
+- Klikkbare artikler
+- AI-klargjorte norske sammendrag
+- Smart duplikatfjerning
+- YouTube-seksjon
+- Vær og kjøreforhold
+- AI-status / sidehelse-sjekk
+- kontakt@motorfeed.no integrert
+- robots.txt og sitemap.xml
+- kontakt.html og personvern.html
 
-## Endret
-- AI-status fjernet fra offentlig forside
-- Raske lenker fjernet
-- Solide kilder fjernet
-- Lagt til Populært nå
-- Lagt til MotorFeed Pulse
-- Lagt til Dagens motorvideo
-- Beholder streng V5 feedmotor og bedre elbil/MC-kategorisering
-
-## Viktig
-Dette er versjonen som bør brukes som V5-preview/test før den eventuelt erstatter live V4.
+Uten OPENAI_API_KEY bruker siden fallback-sammendrag.
+Med OPENAI_API_KEY i Netlify får du bedre AI-sammendrag.
