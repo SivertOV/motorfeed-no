@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>MotorFeed.no | Alt om motor. Oppdatert raskt.</title>
-  <meta name="description" content="MotorFeed.no samler bilnyheter, elbil, MC, teknologi, bilutstyr, videoer, vær og dagens MotorBrief for norske motorinteresserte." />
+  <title>MotorFeed.no | AI-drevet motorportal for bil og MC</title>
+  <meta name="description" content="MotorFeed.no er en AI-drevet motorportal for bil, elbil, MC, videoer, trender, vær og dagens viktigste motoroppdateringer." />
   <meta name="theme-color" content="#05080d" />
   <meta property="og:title" content="MotorFeed.no | Fremtidens motorverden" />
   <meta property="og:description" content="Daglige nyheter, elbil, MC, teknologi, videoer, vær og MotorBrief samlet på ett sted." />
@@ -268,6 +268,22 @@
   color:#9ca3af;
 }
 
+
+    .pulse-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:12px;padding:16px}
+    .pulse-card{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);border-radius:15px;padding:16px}
+    .pulse-card h3{font-size:18px;letter-spacing:-.03em;margin-bottom:8px}
+    .pulse-list{display:grid;gap:9px;color:#d1d5db;font-size:14px}
+    .pulse-meter{height:8px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:8px}
+    .pulse-fill{height:100%;width:70%;background:linear-gradient(90deg,#ef233c,#f97316)}
+    .v5-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.28);color:#bae6fd;border-radius:999px;padding:8px 12px;font-size:12px;font-weight:1000;text-transform:uppercase;letter-spacing:.08em;margin-left:8px}
+    .popular-now{margin-bottom:16px}
+    .popular-now .popular-item{grid-template-columns:38px 96px minmax(0,1fr)}
+    .micro-label{color:#9ca3af;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+    .identity-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+    .identity-strip div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:15px;padding:14px;color:#d1d5db;font-size:13px}
+    .identity-strip strong{display:block;color:#fff;font-size:15px;margin-bottom:4px}
+    @media(max-width:780px){.pulse-grid,.identity-strip{grid-template-columns:1fr}}
+
 </style>
 
   <script type="application/ld+json">
@@ -317,7 +333,7 @@
       </a>
 
       <nav class="menu">
-        <a class="active" href="#top">⌂ Hjem</a><a href="#nyheter">▣ Nyheter</a><a href="#elbil">⚡ Elbil</a><a href="#mc">🏍 MC</a><a href="#utstyr">🧰 Utstyr</a><a href="#video">▶ Video</a><a href="#kilder">⌁ Kilder</a>
+        <a class="active" href="#top">⌂ Hjem</a><a href="#nyheter">▣ Nyheter</a><a href="#populaert">🔥 Populært</a><a href="#elbil">⚡ Elbil</a><a href="#mc">🏍 MC</a><a href="#utstyr">🧰 Utstyr</a><a href="#video">▶ Video</a><a href="#kilder">⌁ Kilder</a>
       </nav>
 
       <div class="nav-actions"><button class="nav-icon" onclick="document.querySelector('#nyheter').scrollIntoView()">⌕</button><button class="menu-button" id="menuButton">☰ Meny</button></div>
@@ -333,8 +349,8 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="breaking">↯ LIVE MOTORPORTAL</div>
-          <h1>Fremtidens motorverden. Nå.</h1>
-          <p>Daglige nyheter, elbil, MC, teknologi, YouTube-videoer, utstyr og kjøreforhold – samlet for norske motorinteresserte.</p>
+          <h1>MotorFeed Pulse. Bil og MC – smartere.</h1>
+          <p>AI-kuraterte motornyheter, Populært nå, videoer, MC-sesong, elbil, vær og norske forhold – samlet på ett sted.</p>
           <div class="hero-actions"><a class="btn btn-red" href="#nyheter">Se siste nyheter →</a><a class="btn btn-dark" href="#brief">Dagens MotorBrief 🧠</a></div>
         </div>
 
@@ -365,6 +381,15 @@
     </div></div>
 
     <div id="elbil"></div>
+    
+    <div class="container">
+      <div class="identity-strip">
+        <div><strong>70% Bil</strong>Elbil, teknologi, nyheter, tester, premiumbiler og trender.</div>
+        <div><strong>30% MC</strong>MC-sesong, touring, adventure, sikkerhet, utstyr og videoer.</div>
+        <div><strong>AI-kurert</strong>MotorFeed prioriterer relevans, motorfokus og kvalitet fremfor tilfeldig feedstøy.</div>
+      </div>
+    </div>
+
     <section class="dashboard" id="nyheter">
       <div class="container dash-grid">
         <aside class="panel sidebar-left">
@@ -380,6 +405,35 @@
             <ul id="briefList"><li>Henter dagens viktigste saker...</li></ul>
             <div class="brief-note">MotorBrief bruker korte norske sammendrag fra feed-data. Med OPENAI_API_KEY i Netlify blir sammendragene AI-generert.</div>
           </section>
+
+
+          <section class="panel popular-now" id="populaert">
+            <div class="panel-head"><span>🔥 Populært nå</span><span class="v5-badge">V5 Pulse</span></div>
+            <div class="popular-list" id="popularNowList">
+              <div class="category-link">Analyserer hva som er mest interessant akkurat nå...</div>
+            </div>
+          </section>
+
+          <section class="panel" id="pulse">
+            <div class="panel-head"><span>⚡ MotorFeed Pulse</span><a class="panel-link" href="#nyheter">Live</a></div>
+            <div class="pulse-grid">
+              <div class="pulse-card">
+                <div class="micro-label">Motorbalanse</div>
+                <h3 id="pulseBalance">70% bil / 30% MC</h3>
+                <div class="pulse-list" id="pulseInsights">
+                  <div>AI vurderer bil-, elbil- og MC-trender...</div>
+                </div>
+              </div>
+              <div class="pulse-card">
+                <div class="micro-label">Sesongmotor</div>
+                <h3 id="seasonTitle">Aktuelt nå</h3>
+                <div class="pulse-list" id="seasonList">
+                  <div>MC-sesong, touring og kjøreforhold vurderes automatisk.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
           <section class="panel">
             <div class="panel-head"><span>Fremme i nyhetene</span><a class="panel-link" id="showAllTop">Se alle nyheter →</a></div>
@@ -431,35 +485,26 @@
           </section>
 
           <section class="panel"><div class="panel-head"><span>Kontakt</span></div><div class="category-list"><a class="category-link" href="mailto:kontakt@motorfeed.no">kontakt@motorfeed.no</a><a class="category-link" href="mailto:tips@motorfeed.no">tips@motorfeed.no</a><a class="category-link" href="mailto:annonser@motorfeed.no">annonser@motorfeed.no</a></div></section>
-          <section class="panel"><div class="panel-head"><span>Raske lenker</span></div><div class="category-list"><a class="category-link" href="https://www.tv2.no/broom/" target="_blank" rel="noopener noreferrer">TV2 Broom</a><a class="category-link" href="https://www.motor.no/" target="_blank" rel="noopener noreferrer">Motor.no</a><a class="category-link" href="https://www.bilnorge.no/" target="_blank" rel="noopener noreferrer">BilNorge</a><a class="category-link" href="https://www.elbil24.no/" target="_blank" rel="noopener noreferrer">Elbil24</a></div></section>
+          
         </aside>
       </div>
     </section>
 
-    <section class="container" id="kilder">
-      <div class="panel">
-        <div class="panel-head"><span>Solide kilder</span><a class="panel-link" href="#top">Til toppen ↑</a></div>
-        <div class="sources-grid">
-          <a class="source-card" href="https://www.tv2.no/broom/" target="_blank" rel="noopener noreferrer">TV2 Broom<span>Norsk bilstoff</span></a>
-          <a class="source-card" href="https://www.motor.no/" target="_blank" rel="noopener noreferrer">Motor.no<span>Norsk motor</span></a>
-          <a class="source-card" href="https://www.bilnorge.no/" target="_blank" rel="noopener noreferrer">BilNorge<span>Bilnyheter</span></a>
-          <a class="source-card" href="https://www.elbil24.no/" target="_blank" rel="noopener noreferrer">Elbil24<span>Elbil</span></a>
-          <a class="source-card" href="https://www.topgear.com/" target="_blank" rel="noopener noreferrer">Top Gear<span>Tester/video</span></a>
-          <a class="source-card" href="https://www.caranddriver.com/" target="_blank" rel="noopener noreferrer">Car and Driver<span>Biltester</span></a>
-          <a class="source-card" href="https://www.motor1.com/" target="_blank" rel="noopener noreferrer">Motor1<span>RSS aktiv</span></a>
-          <a class="source-card" href="https://www.autoexpress.co.uk/" target="_blank" rel="noopener noreferrer">Auto Express<span>Guider</span></a>
-          <a class="source-card" href="https://www.bike.se/" target="_blank" rel="noopener noreferrer">Bike Sverige<span>MC</span></a>
-          <a class="source-card" href="https://www.mcavisa.no/" target="_blank" rel="noopener noreferrer">MC-avisa<span>Norsk MC</span></a>
-          <a class="source-card" href="https://www.rideapart.com/" target="_blank" rel="noopener noreferrer">RideApart<span>RSS aktiv</span></a>
-          <a class="source-card" href="https://www.visordown.com/" target="_blank" rel="noopener noreferrer">Visordown<span>MC</span></a>
-          <a class="source-card" href="https://www.cycleworld.com/" target="_blank" rel="noopener noreferrer">Cycle World<span>MC-tester</span></a>
-          <a class="source-card" href="https://www.tek.no/" target="_blank" rel="noopener noreferrer">Tek.no<span>Utstyr</span></a>
-          <a class="source-card" href="https://www.gearpatrol.com/" target="_blank" rel="noopener noreferrer">Gear Patrol<span>Utstyr</span></a>
-          <a class="source-card" href="https://www.thedrive.com/" target="_blank" rel="noopener noreferrer">The Drive<span>Utstyr/RSS</span></a>
-        </div>
-      </div>
-    </section>
-  </main>
+    
+  
+<section class="container">
+  <div class="panel">
+    <div class="panel-head">
+      <span>MotorFeed Pulse</span>
+    </div>
+    <div style="padding:24px;color:#d7dde8;font-size:15px;line-height:1.7;">
+      V5 fokuserer på AI-prioriterte motornyheter, smartere relevansfiltrering,
+      mer premium magasin-layout og levende innhold basert på ekte trafikkdata.
+    </div>
+  </div>
+</section>
+
+</main>
 
   <footer><div class="container footer-inner"><p>© 2026 MotorFeed.no</p><p><a href="/kontakt.html">Kontakt</a> · <a href="mailto:kontakt@motorfeed.no">kontakt@motorfeed.no</a> · <a href="mailto:tips@motorfeed.no">tips@motorfeed.no</a> · <a href="mailto:annonser@motorfeed.no">annonser@motorfeed.no</a> · <a href="/personvern.html">Personvern</a></p></div></footer>
 
@@ -517,6 +562,51 @@
           <a class="popular-item" href="${esc(href(item))}" target="_blank" rel="noopener noreferrer"><div class="rank">${i+1}</div><img src="${esc(img(item))}" alt="${esc(item.title)}"><div><strong>${esc(item.title)}</strong><small>Kilde: ${esc(item.source||"RSS")}</small></div></a>`).join("");
 
         document.querySelector("#briefList").innerHTML=allItems.slice(0,5).map(item=>`<li><strong>${esc(item.category||"Nyhet")}:</strong> ${esc(summary(item))} <span style="color:#9ca3af;">(${esc(item.source||"RSS")})</span></li>`).join("");
+
+        const v5Ranked = [...allItems].sort((a,b)=>(b.score||0)-(a.score||0));
+        const popularItems = v5Ranked.slice(0,6);
+        const popularBox = document.querySelector("#popularNowList");
+        if(popularBox){
+          popularBox.innerHTML = popularItems.map((item,i)=>`
+            <a class="popular-item" href="${esc(href(item))}" target="_blank" rel="noopener noreferrer">
+              <div class="rank">${i+1}</div>
+              <img src="${esc(img(item))}" alt="${esc(item.title)}">
+              <div><strong>${esc(item.title)}</strong><small>${esc(item.category||"Motor")} · Score ${item.score||70} · ${esc(item.source||"RSS")}</small></div>
+            </a>
+          `).join("");
+        }
+
+        const counts = allItems.reduce((acc,item)=>{acc[item.category]=(acc[item.category]||0)+1;return acc;},{});
+        const carCount = (counts.Bil||0)+(counts.Elbil||0)+(counts.Teknologi||0)+(counts.Utstyr||0);
+        const mcCount = counts.MC||0;
+        const total = Math.max(1, carCount+mcCount);
+        const carPct = Math.round(carCount/total*100);
+        const mcPct = 100-carPct;
+        const pulseBalance = document.querySelector("#pulseBalance");
+        if(pulseBalance) pulseBalance.textContent = `${carPct}% bil / ${mcPct}% MC`;
+
+        const pulseInsights = document.querySelector("#pulseInsights");
+        if(pulseInsights){
+          const topCats = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,3);
+          pulseInsights.innerHTML = topCats.map(([cat,n])=>`<div>⚡ ${esc(cat)} har ${n} relevante saker i feeden nå.</div>`).join("") || "<div>MotorFeed analyserer dagens trender.</div>";
+        }
+
+        const month = new Date().getMonth()+1;
+        const seasonTitle = document.querySelector("#seasonTitle");
+        const seasonList = document.querySelector("#seasonList");
+        if(seasonTitle && seasonList){
+          if(month>=4 && month<=8){
+            seasonTitle.textContent = "MC-sesong aktiv";
+            seasonList.innerHTML = `<div>🏍 Touring, hjelm, utstyr og kjøreforhold prioriteres.</div><div>🌦 Vær og vei er ekstra relevant for MC-førere.</div>`;
+          } else if(month>=10 || month<=2){
+            seasonTitle.textContent = "Vinterfokus";
+            seasonList.innerHTML = `<div>❄ Elbilrekkevidde, vinterdekk og AWD prioriteres.</div><div>🔋 Batteri og lading blir mer relevant.</div>`;
+          } else {
+            seasonTitle.textContent = "Sesongskifte";
+            seasonList.innerHTML = `<div>🧰 Service, dekk og kjøreforhold prioriteres.</div><div>🚗 Bil og MC balanseres etter aktualitet.</div>`;
+          }
+        }
+
         document.querySelector("#liveTicker").innerHTML=allItems.slice(0,8).map(item=>`<span>⚡ ${esc(item.title)} — ${esc(item.source||"RSS")}</span>`).join("");
       }
 
