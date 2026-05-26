@@ -1,16 +1,29 @@
-# MotorFeed.no — V4 Final Lanseringsklar
+# MotorFeed V5 Premium AI Pulse
 
-Inkludert:
-- Premium mørkt MotorFeed-design
-- Klikkbare artikler
-- AI-klargjorte norske sammendrag
-- Smart duplikatfjerning
-- YouTube-seksjon
-- Vær og kjøreforhold
-- AI-status / sidehelse-sjekk
-- kontakt@motorfeed.no integrert
-- robots.txt og sitemap.xml
-- kontakt.html og personvern.html
+Dette er V5 videreutviklet fra premium magazine-designet.
 
-Uten OPENAI_API_KEY bruker siden fallback-sammendrag.
-Med OPENAI_API_KEY i Netlify får du bedre AI-sammendrag.
+## Inkludert
+- Premium magazine-layout
+- Store bilder og hero
+- Topphistorier
+- Sponsorområde
+- Siste nytt
+- Nyhetsbrev
+- Mest leste
+- Kategorikort
+- Video
+- MotorFeed Pulse
+- Populært nå
+- AI-sammendrag på kort
+- 70/30 bil/MC-retning
+- Norsk/sesongbasert fokus
+- V6-klar struktur for senere personalisering, app, push og brukerdata
+
+## Viktig
+Dette er V5-preview/utviklingsversjon. Tweakes etter Analytics/Search Console-data.
+
+
+## Nytt i denne versjonen
+- AI-oversettelse klargjort
+- Engelske artikler får norsk AI-sammendrag
+- Mer premium AI-lag i frontend
