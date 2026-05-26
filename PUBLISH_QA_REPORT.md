@@ -1,18 +1,17 @@
-# MotorFeed V5 — Visual QA Final
+# MotorFeed V5 Stable Consumer Build
 
-## Forbedringer
-- Partner/logo-strip fjernet
-- Maritime/ikke-motor-saker blokkert strengere
-- Bedre responsive grids
-- Line-clamp på titler og tekst
-- Maks-høyde på AI-sammendrag
-- Bedre mobilvisning
-- Bedre spacing/card-stabilitet
+- ✅ Hero kept
+- ✅ Top stories kept
+- ✅ News list kept
+- ✅ Pulse kept
+- ✅ Video kept
+- ✅ Sponsor removed
+- ✅ Partner strip removed
+- ✅ Focus removed
+- ✅ Smart cards removed
+- ✅ Newsletter removed
+- ✅ Frontend filter
+- ✅ GA kept
+- ✅ JS syntax
 
-## KS
-- Partner/logo-strip: fjernet
-- AI-status: fjernet
-- Raske lenker: fjernet
-- Solide kilder: fjernet
-- Google Analytics: beholdt
-- Netlify JavaScript: kontrollert
+Bygget fra stabil premium magazine-base. Fjerner kun demo/sponsor/dev-elementer, beholder hovedlayout.

@@ -3,11 +3,6 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MotorFeed.no | Premium norsk motorportal</title>
-
-<meta property="og:site_name" content="MotorFeed">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://motorfeed.no/">
-
 <meta name="description" content="MotorFeed er en premium norsk motorportal for bil, elbil, MC, tester, teknologi, guider og videoer.">
 <meta name="theme-color" content="#05070a">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N35DXBBDP0"></script>
@@ -27,8 +22,8 @@
 .newsletter{padding:26px;background:radial-gradient(circle at top right,rgba(255,210,31,.16),transparent 42%),var(--panel)}.newsletter p{color:#cbd5e1;font-size:14px;margin:8px 0 18px}.newsletter form{display:flex}.newsletter input{flex:1;height:48px;background:#0a0f15;border:1px solid var(--line);color:white;padding:0 14px;border-radius:8px 0 0 8px}.newsletter button{height:48px;border:0;background:var(--yellow);color:#111;font-weight:1000;border-radius:0 8px 8px 0;padding:0 18px}
 .most{padding:14px}.most-row{display:grid;grid-template-columns:38px minmax(0,1fr) 88px;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.rank{color:var(--yellow);font-weight:1000;font-size:20px}.most-row h4{font-size:14px;line-height:1.2}.most-row small{color:#9ca3af;font-size:11px}.most-row img{height:56px;border-radius:8px}
 .category-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:24px 0}.cat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;align-items:center;gap:12px}.cat-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;border:1px solid currentColor}.cat strong{display:block}.cat small{color:#9ca3af}
-footer{border-top:1px solid var(--line);color:#9ca3af;padding:28px 0;margin-top:10px}
-@media(max-width:1000px){.nav{display:none}.main-grid,.top-grid,.category-grid{grid-template-columns:1fr}.hero{height:520px}}@media(max-width:640px){.brand{font-size:24px}.hero h1{font-size:46px}.ad{display:block}.btn-dark{margin-left:0;margin-top:10px}.newsletter form{display:grid}.newsletter input,.newsletter button{border-radius:8px}.most-row{grid-template-columns:34px 1fr}}
+.partners{display:flex;align-items:center;justify-content:space-around;gap:24px;padding:24px 0;border-top:1px solid var(--line);color:#858c96;font-weight:1000;font-size:22px;letter-spacing:.08em}footer{border-top:1px solid var(--line);color:#9ca3af;padding:28px 0;margin-top:10px}
+@media(max-width:1000px){.nav{display:none}.main-grid,.top-grid,.category-grid{grid-template-columns:1fr}.hero{height:520px}.partners{flex-wrap:wrap}}@media(max-width:640px){.brand{font-size:24px}.hero h1{font-size:46px}.ad{display:block}.btn-dark{margin-left:0;margin-top:10px}.newsletter form{display:grid}.newsletter input,.newsletter button{border-radius:8px}.most-row{grid-template-columns:34px 1fr}}
 
 /* V5 Premium AI + Pulse layer */
 .pulse-strip{margin:24px 0;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
@@ -46,56 +41,72 @@ footer{border-top:1px solid var(--line);color:#9ca3af;padding:28px 0;margin-top:
 .smart-card span{color:#9ca3af;font-size:13px}
 @media(max-width:1000px){.pulse-strip,.smart-grid{grid-template-columns:1fr}}
 
-/* MotorFeed V5 Visual QA improvements */
+/* MotorFeed V5 stable consumer polish */
 *{min-width:0}
-img{max-width:100%;height:auto}
-.story-card,.news-row,.pulse-box,.smart-card,.cat,.panel,.most-row{overflow:hidden}
-.story-card h2,.news-row h3,.most-row h4,.hero h1{overflow-wrap:anywhere}
-.story-card h2{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-row h3,.most-row h4{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.story-card p,.news-row p,.ai-summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.ai-summary{max-height:5.4em;margin-top:10px}
-.top-grid,.main-grid,.category-grid,.pulse-strip,.smart-grid{align-items:stretch}
-.story-card{display:flex;flex-direction:column}.story-card img{aspect-ratio:16/9;height:auto}.story-body{flex:1;display:flex;flex-direction:column}
-.news-row img,.most-row img{aspect-ratio:4/3;object-fit:cover}
-.hero{min-height:520px}.hero h1{max-width:720px}
-@media(max-width:1100px){.main-grid{grid-template-columns:1fr!important}.top-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.pulse-strip,.smart-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:760px){.top-grid,.pulse-strip,.smart-grid,.category-grid{grid-template-columns:1fr!important}.hero{height:auto!important;min-height:560px;padding:32px 0}.hero h1{font-size:clamp(40px,12vw,58px)!important;line-height:.95}.hero p{font-size:16px!important}.news-row{grid-template-columns:96px minmax(0,1fr)!important}.tabs{display:none!important}.ad{display:none!important}}
-@media(max-width:480px){.container{width:92%!important}.news-row{grid-template-columns:1fr!important}.news-row img{height:auto}.btn{width:100%;margin:8px 0 0 0!important}.brand{font-size:22px!important}}
+.story-card h2,.news-row h3,.most-row h4{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.story-card h2{ -webkit-line-clamp:3; }
+.news-row h3,.most-row h4{ -webkit-line-clamp:2; }
+.story-card p,.news-row p,.ai-summary{
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}
+.ai-summary{max-height:5.4em}
+.story-card,.news-row,.panel,.pulse-box{overflow:hidden}
+@media(max-width:1000px){
+  .main-grid{grid-template-columns:1fr!important}
+  .top-grid{grid-template-columns:1fr!important}
+  .pulse-strip{grid-template-columns:1fr!important}
+}
+@media(max-width:640px){
+  .hero h1{font-size:44px!important}
+  .news-row{grid-template-columns:1fr!important}
+  .news-row img{height:auto!important}
+}
 
 </style>
-
-<style>
-html{scroll-behavior:smooth}
-.story-card,.news-row,.pulse-box,.smart-card,.cat{transition:all .18s ease}
-.story-card:hover,.pulse-box:hover,.smart-card:hover,.cat:hover{transform:translateY(-2px)}
-
-/* MotorFeed V5 Visual QA improvements */
-*{min-width:0}
-img{max-width:100%;height:auto}
-.story-card,.news-row,.pulse-box,.smart-card,.cat,.panel,.most-row{overflow:hidden}
-.story-card h2,.news-row h3,.most-row h4,.hero h1{overflow-wrap:anywhere}
-.story-card h2{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.news-row h3,.most-row h4{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.story-card p,.news-row p,.ai-summary{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.ai-summary{max-height:5.4em;margin-top:10px}
-.top-grid,.main-grid,.category-grid,.pulse-strip,.smart-grid{align-items:stretch}
-.story-card{display:flex;flex-direction:column}.story-card img{aspect-ratio:16/9;height:auto}.story-body{flex:1;display:flex;flex-direction:column}
-.news-row img,.most-row img{aspect-ratio:4/3;object-fit:cover}
-.hero{min-height:520px}.hero h1{max-width:720px}
-@media(max-width:1100px){.main-grid{grid-template-columns:1fr!important}.top-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.pulse-strip,.smart-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
-@media(max-width:760px){.top-grid,.pulse-strip,.smart-grid,.category-grid{grid-template-columns:1fr!important}.hero{height:auto!important;min-height:560px;padding:32px 0}.hero h1{font-size:clamp(40px,12vw,58px)!important;line-height:.95}.hero p{font-size:16px!important}.news-row{grid-template-columns:96px minmax(0,1fr)!important}.tabs{display:none!important}.ad{display:none!important}}
-@media(max-width:480px){.container{width:92%!important}.news-row{grid-template-columns:1fr!important}.news-row img{height:auto}.btn{width:100%;margin:8px 0 0 0!important}.brand{font-size:22px!important}}
-
-</style>
-
 </head>
 <body><div class="page" id="top">
 <header class="topbar"><div class="container"><a class="brand" href="#top"><div class="brand-icon"></div>MOTOR<span>FEED</span></a><nav class="nav"><a href="#nyheter">Nyheter</a><a href="#elbil">Elbil</a><a href="#bil">Bil</a><a href="#mc">MC</a><a href="#tester">Tester</a><a href="#teknologi">Teknologi</a><a href="#guide">Guide</a><a href="#video">Video</a></nav><button class="menu-btn">☰ Meny</button></div></header>
 <div class="breaking"><div class="container"><span class="breaking-badge">⚡ Breaking</span><span id="breakingText">MotorFeed V5 henter dagens viktigste motoroppdateringer...</span></div></div>
+<section class="hero"><img id="heroImage" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=92" alt="MotorFeed"><div class="container hero-content"><div><h1 id="heroTitle">Fremtidens motorverden. Nå.</h1><p id="heroText">Nyheter, tester, guider og teknologi – samlet på ett sted. Oppdatert hver dag.</p><a class="btn btn-yellow" href="#nyheter">Siste nytt →</a><a class="btn btn-dark" href="#guide">Utforsk guider</a></div></div><div class="dots"><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></section>
+<main class="container"><h2 class="section-title">Topphistorier</h2><section class="top-grid" id="topStories"></section>
+
+<section class="pulse-strip" id="pulse">
+<div class="pulse-box">
+  <div class="pulse-kicker">🌍 AI Oversettelse</div>
+  <h3>Engelsk → Norsk</h3>
+  <p>Internasjonale motorartikler oppsummeres automatisk på norsk for raskere lesing.</p>
+</div>
+
+  <div class="pulse-box">
+    <div class="pulse-kicker">⚡ MotorFeed Pulse</div>
+    <h3 id="pulseHeadline">Analyserer motorbildet akkurat nå</h3>
+    <p id="pulseText">V5 prioriterer bil, elbil og MC med strengere relevansfilter og mindre tilfeldig feedstøy.</p>
+  </div>
+  <div class="pulse-box">
+    <div class="pulse-kicker">🔥 Populært nå</div>
+    <h3 id="popularPulse">Trending beregnes</h3>
+    <p>Først basert på relevans-score. Senere kobles dette mot ekte Analytics-data.</p>
+  </div>
+  <div class="pulse-box">
+    <div class="pulse-kicker">Live</div>
+    <span class="pulse-live">Oppdateres automatisk</span>
+    <p style="margin-top:12px" id="seasonPulse">Sesongmotoren løfter MC om våren/sommeren og elbil/vintertema om vinteren.</p>
+  </div>
+</section>
+
+<section class="main-grid" id="nyheter"><div class="panel"><div class="panel-head"><span>Siste nytt</span><div class="tabs"><span class="tab active">Alle</span><span class="tab">Elbil</span><span class="tab">Bil</span><span class="tab">MC</span><span class="tab">Teknologi</span></div></div><div class="news-list" id="newsList"></div></div>
+<aside>
+<section class="panel" style="margin-top:18px"><div class="panel-head"><span>Mest leste</span></div><div class="most" id="mostRead"></div></section></aside></section>
 
 <h2 class="section-title">Utforsk kategorier</h2><section class="category-grid"><a class="cat" id="elbil" href="#nyheter" style="color:#5cff77"><span class="cat-icon">▰</span><span><strong>Elbil</strong><small>AI-sortert</small></span></a><a class="cat" id="bil" href="#nyheter" style="color:#ffd21f"><span class="cat-icon">▰</span><span><strong>Bil</strong><small>Nyheter</small></span></a><a class="cat" id="mc" href="#nyheter" style="color:#ffd21f"><span class="cat-icon">◉</span><span><strong>MC</strong><small>Sesong</small></span></a><a class="cat" id="tester" href="#nyheter" style="color:#ff4b4b"><span class="cat-icon">⌁</span><span><strong>Tester</strong><small>Kommende</small></span></a><a class="cat" id="teknologi" href="#nyheter" style="color:#647bff"><span class="cat-icon">▣</span><span><strong>Teknologi</strong><small>Smart bil</small></span></a><a class="cat" id="guide" href="#nyheter" style="color:#a855f7"><span class="cat-icon">▤</span><span><strong>Guide</strong><small>Tips</small></span></a></section>
-<section class="panel" id="video" style="margin-bottom:26px"><div class="news-list" id="videoBox"><div class="news-row"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" alt=""><div><small>Video</small><h3>Henter relevant motorvideo...</h3><p>YouTube-feed sorteres etter bil, elbil og MC.</p></div></div></div></section>
+<section class="panel" id="video" style="margin-bottom:26px"><div class="panel-head"><span>Video</span><a id="videoLink" class="panel-link" href="https://youtube.com" target="_blank">Åpne →</a></div><div class="news-list" id="videoBox"><div class="news-row"><img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80" alt=""><div><small>Video</small><h3>Henter relevant motorvideo...</h3><p>YouTube-feed sorteres etter bil, elbil og MC.</p></div></div></div></section>
 </main>
 <footer><div class="container">© 2026 MotorFeed.no · <a href="/kontakt.html">Kontakt</a> · <a href="/personvern.html">Personvern</a></div></footer></div>
 <script>
@@ -125,14 +136,14 @@ img{max-width:100%;height:auto}
         if(!p) return;
         const note=document.createElement('div');
         note.className='ai-summary';
-        note.textContent='MotorFeed AI: '+p.textContent.replace(/\\s+/g,' ').slice(0,110)+' · MotorFeed AI lager norske sammendrag av internasjonale motorartikler.';
+        note.textContent='Kort forklart: '+p.textContent.replace(/\\s+/g,' ').slice(0,110)+' · MotorFeed lager korte norske sammendrag av internasjonale motorsaker.';
         box.appendChild(note);
       });
     }
 
 function motorFeedFrontendRelevant(item){
   const text=((item.title||'')+' '+(item.summary||'')+' '+(item.description||'')+' '+(item.category||'')).toLowerCase();
-  const blocked=['skipsreder','rederi','shipping','shipowner','ship owner','cruise','container ship','ferry','ferge','oljeplattform','offshore vessel','tanker','bulk carrier','aksje','børs','politikk','valgkamp','sjøfart'];
+  const blocked=['skipsreder','rederi','shipping','shipowner','ship owner','cruise','container ship','ferry','ferge','oljeplattform','offshore vessel','tanker','bulk carrier','sjøfart'];
   const motor=['bil','elbil','ev','car','vehicle','automotive','tesla','bmw','audi','mercedes','volvo','polestar','toyota','ford','porsche','honda','yamaha','ducati','kawasaki','husqvarna','mc','motorcycle','motorsykkel','motocross','motorsport','f1','rally','lading','rekkevidde','battery','charging','suv'];
   if(blocked.some(w=>text.includes(w)) && !motor.some(w=>text.includes(w))) return false;
   return true;
@@ -140,11 +151,4 @@ function motorFeedFrontendRelevant(item){
 
 function render(items){const data=(items&&items.length?items.filter(motorFeedFrontendRelevant):fallback).sort((a,b)=>(b.score||0)-(a.score||0));const lead=data[0]||fallback[0];heroImage.src=img(lead);heroTitle.textContent=lead.title;heroText.textContent=sum(lead);breakingText.textContent=lead.title+" · "+(lead.source||"MotorFeed");topStories.innerHTML=data.slice(0,3).map(card).join("");newsList.innerHTML=data.slice(3,9).map(row).join("");mostRead.innerHTML=data.slice(0,5).map((i,n)=>most(i,n+1)).join(""); updatePulse(data); setTimeout(addAiSummaries,50)}async function loadNews(){try{const r=await fetch("/.netlify/functions/fetch-news",{cache:"no-store"});if(!r.ok)throw new Error();const d=await r.json();render(d.items||[])}catch(e){render(fallback)}}async function loadVideo(){try{const r=await fetch("/.netlify/functions/fetch-youtube",{cache:"no-store"});if(!r.ok)throw new Error();const d=await r.json();const v=(d.items||[])[0];if(!v)return;videoLink.href=v.url;videoBox.innerHTML=`<a class="news-row" href="${esc(v.url)}" target="_blank" rel="noopener"><img src="${esc(v.thumbnail)}" alt=""><div><small>${esc(v.channel||"Video")}</small><h3>${esc(v.title)}</h3><p>Relevant motorvideo valgt for bil, elbil eller MC.</p></div></a>`}catch(e){}}loadNews();loadVideo()})();
 </script>
-
-<!-- V5 Translation Upgrade -->
-<!-- Internasjonale artikler prioriteres nå for norske AI-sammendrag -->
-
 </body></html>
-<!-- MotorFeed V5 Publish Ready | QA verified | AI/Pulse enabled -->
-
-<!-- MotorFeed consumer-first layout enabled -->
