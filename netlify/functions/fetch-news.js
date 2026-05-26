@@ -1,3 +1,13 @@
+
+function cleanupNorwegianSummary(text=""){
+  return text
+    .replace(/officially/gi,"offisielt")
+    .replace(/hybrid/gi,"hybrid")
+    .replace(/report/gi,"rapport")
+    .replace(/electric/gi,"elektrisk")
+    .replace(/vehicle/gi,"kjøretøy");
+}
+
 const SOURCES = [
   { name: "E24 Bil", category: "Bil", url: "https://e24.no/rss2/?seksjon=bil", market: "NO" },
   { name: "InsideEVs", category: "Elbil", url: "https://insideevs.com/rss/news/all/", market: "INT" },

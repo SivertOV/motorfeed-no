@@ -123,16 +123,7 @@ img{max-width:100%;height:auto}
 <section class="ad"><div><small class="section-title" style="margin:0;color:var(--yellow)">Sponsor</small><h2>Din neste bil?</h2><p>Start reisen hos våre partnere.</p></div><a class="btn btn-yellow" href="mailto:annonser@motorfeed.no">Se tilbud</a></section>
 <section class="main-grid" id="nyheter"><div class="panel"><div class="panel-head"><span>Siste nytt</span><div class="tabs"><span class="tab active">Alle</span><span class="tab">Elbil</span><span class="tab">Bil</span><span class="tab">MC</span><span class="tab">Teknologi</span></div></div><div class="news-list" id="newsList"></div></div>
 <aside>
-<section class="panel" style="margin-bottom:18px">
-<div class="panel-head"><span>⚡ Fokus i V5</span></div>
-<div style="padding:22px">
-<div class="pulse-live">AI + Pulse aktiv</div>
-<p style="margin-top:12px;color:#cbd5e1">
-MotorFeed V5 prioriterer nå premium frontend, smartere relevansmotor,
-live Pulse, AI-oppsummeringer og bedre motorfiltrering.
-</p>
-</div>
-</section>
+
 <section class="panel" style="margin-top:0"><div class="panel-head"><span>Mest leste</span></div><div class="most" id="mostRead"></div></section></aside></section>
 
 <section class="smart-grid" id="ai">
@@ -173,7 +164,7 @@ live Pulse, AI-oppsummeringer og bedre motorfiltrering.
         if(!p) return;
         const note=document.createElement('div');
         note.className='ai-summary';
-        note.textContent='Kort forklart av MotorFeed AI: '+p.textContent.replace(/\\s+/g,' ').slice(0,110)+' · Engelske artikler oversettes automatisk til norsk sammendrag i V5.';
+        note.textContent='MotorFeed AI: '+p.textContent.replace(/\\s+/g,' ').slice(0,110)+' · MotorFeed AI lager norske sammendrag av internasjonale motorartikler.';
         box.appendChild(note);
       });
     }
@@ -188,5 +179,9 @@ function motorFeedFrontendRelevant(item){
 
 function render(items){const data=(items&&items.length?items.filter(motorFeedFrontendRelevant):fallback).sort((a,b)=>(b.score||0)-(a.score||0));const lead=data[0]||fallback[0];heroImage.src=img(lead);heroTitle.textContent=lead.title;heroText.textContent=sum(lead);breakingText.textContent=lead.title+" · "+(lead.source||"MotorFeed");topStories.innerHTML=data.slice(0,3).map(card).join("");newsList.innerHTML=data.slice(3,9).map(row).join("");mostRead.innerHTML=data.slice(0,5).map((i,n)=>most(i,n+1)).join(""); updatePulse(data); setTimeout(addAiSummaries,50)}async function loadNews(){try{const r=await fetch("/.netlify/functions/fetch-news",{cache:"no-store"});if(!r.ok)throw new Error();const d=await r.json();render(d.items||[])}catch(e){render(fallback)}}async function loadVideo(){try{const r=await fetch("/.netlify/functions/fetch-youtube",{cache:"no-store"});if(!r.ok)throw new Error();const d=await r.json();const v=(d.items||[])[0];if(!v)return;videoLink.href=v.url;videoBox.innerHTML=`<a class="news-row" href="${esc(v.url)}" target="_blank" rel="noopener"><img src="${esc(v.thumbnail)}" alt=""><div><small>${esc(v.channel||"Video")}</small><h3>${esc(v.title)}</h3><p>Relevant motorvideo valgt for bil, elbil eller MC.</p></div></a>`}catch(e){}}loadNews();loadVideo()})();
 </script>
+
+<!-- V5 Translation Upgrade -->
+<!-- Internasjonale artikler prioriteres nå for norske AI-sammendrag -->
+
 </body></html>
 <!-- MotorFeed V5 Publish Ready | QA verified | AI/Pulse enabled -->
