@@ -87,6 +87,7 @@ function inferCategory(title = "", description = "", sourceCategory = "Bil") {
   if (/(ai|software|autonomous|selvkjørende|infotainment|teknologi|tech|adas|carplay|android automotive)/i.test(text)) return "Teknologi";
   return sourceCategory;
 }
+function hardBlockedNonMotor(title="",description=""){const text=`${title} ${description}`.toLowerCase();const blocked=["skipsreder","rederi","shipping","shipowner","ship owner","cruise","container ship","ferry","ferge","offshore vessel","tanker","bulk carrier","oljeplattform","sjøfart"];const motor=[...CAR_BRANDS,...MC_BRANDS,...MOTOR_TERMS];return blocked.some(w=>text.includes(w))&&!motor.some(w=>text.includes(w));}
 function isRelevantMotorStory(title = "", description = "", category = "") {
   const text = `${title} ${description} ${category}`.toLowerCase();
   const positive = /(car|cars|auto|vehicle|motor|bil|elbil|ev|tesla|bmw|audi|mercedes|volkswagen|toyota|ford|porsche|polestar|byd|motorcycle|mc|motorsykkel|ducati|yamaha|kawasaki|honda|garage|tyre|tire|dekk|dashcam|charger|road|driving|kjøring|formula 1|f1|motorsport)/i;

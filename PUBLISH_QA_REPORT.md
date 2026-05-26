@@ -1,31 +1,18 @@
-# MotorFeed V5 — Publiseringsrapport
+# MotorFeed V5 — Visual QA Final
 
-Generert: 2026-05-26T11:09:14.827654
+## Forbedringer
+- Partner/logo-strip fjernet
+- Maritime/ikke-motor-saker blokkert strengere
+- Bedre responsive grids
+- Line-clamp på titler og tekst
+- Maks-høyde på AI-sammendrag
+- Bedre mobilvisning
+- Bedre spacing/card-stabilitet
 
-## KS / QA Kontroll
-
-- ✅ Google Analytics
-- ✅ MotorFeed Pulse
-- ✅ AI Summaries
-- ✅ Newsletter Form
-- ✅ Video Section
-- ✅ V6 Ready
-- ✅ No AI Status Box
-- ✅ No Fast Links
-- ✅ No Solid Sources
-- ✅ Internal Anchors OK
-
-## Inkludert i denne versjonen
-
-- Premium magazine-design
-- MotorFeed Pulse
-- AI-sammendrag
-- Engelsk → Norsk AI-oppsummering
-- Topphistorier
-- Mest leste
-- Video-seksjon
-- Kategorikort
-- 70/30 Bil/MC-retning
-- V6-klar struktur
-- Premium frontend
-- SEO metadata
+## KS
+- Partner/logo-strip: fjernet
+- AI-status: fjernet
+- Raske lenker: fjernet
+- Solide kilder: fjernet
+- Google Analytics: beholdt
+- Netlify JavaScript: kontrollert
